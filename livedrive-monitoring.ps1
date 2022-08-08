@@ -5,6 +5,14 @@
 #}
 
 $liveFolder = Test-Path $env:LOCALAPPDATA\Livedrive
+$livedrive = Get-Process Livedrive
+
+if (!livedrive){
+    # Start LiveDrive
+    Start-Process ${env:ProgramFiles(x86)}\Livedrive\Livedrive.exe
+}
+
+$process = $livedrive | Select-Object -Last 1
 
 if (!$liveFolder){
     # Create folder
