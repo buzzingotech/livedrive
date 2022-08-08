@@ -7,7 +7,7 @@
 $liveFolder = Test-Path $env:LOCALAPPDATA\Livedrive
 $livedrive = Get-Process Livedrive
 
-if (!livedrive){
+if (!$livedrive){
     # Start LiveDrive
     Start-Process ${env:ProgramFiles(x86)}\Livedrive\Livedrive.exe
 }
