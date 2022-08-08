@@ -25,4 +25,4 @@ if ($img){
     Remove-Item $env:LOCALAPPDATA\Livedrive\livedrive-screenshot.jpg
 }
 
-Start-Process $env:programdata\Syncro\bin\livedrive\Livedrive-monitor.exe -ArgumentList "$process.Id"
+Start-Process $env:programdata\Syncro\bin\livedrive\Livedrive-monitor.exe -ArgumentList "$($process.Id)"
