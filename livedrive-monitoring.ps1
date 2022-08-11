@@ -1,14 +1,15 @@
-# Check if computer locked
-$logon = Get-Process LogonUI
-if ($null -ne $logon){
-    exit 1
-}
-
+# Check if LiveDrive folder exists
 $liveFolder = Test-Path $env:LOCALAPPDATA\Livedrive
 
 if (!$liveFolder){
     # Create folder
     New-Item -Path $env:LOCALAPPDATA\Livedrive -ItemType Directory
+}
+
+# Check if computer locked
+$logon = Get-Process LogonUI
+if ($null -ne $logon){
+    exit 1
 }
 
 Start-Transcript -Path "$env:LOCALAPPDATA\Livedrive\script.log"
