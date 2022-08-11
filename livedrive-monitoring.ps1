@@ -10,7 +10,7 @@ $livedrive = Get-Process Livedrive
 if (!$livedrive){
     # Start LiveDrive
     Start-Process ${env:ProgramFiles(x86)}\Livedrive\Livedrive.exe
-    Start-Sleep -Seconds 15
+    Start-Sleep -Seconds 30
 }
 
 $process = $livedrive | Select-Object -Last 1
