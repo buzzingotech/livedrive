@@ -6,13 +6,13 @@ if (!$liveFolder){
     New-Item -Path $env:LOCALAPPDATA\Livedrive -ItemType Directory
 }
 
+Start-Transcript -Path "$env:LOCALAPPDATA\Livedrive\script.log"
+
 # Check if computer locked
 $logon = Get-Process LogonUI
 if ($null -ne $logon){
     exit 1
 }
-
-Start-Transcript -Path "$env:LOCALAPPDATA\Livedrive\script.log"
 
 $livedrive = Get-Process Livedrive
 
